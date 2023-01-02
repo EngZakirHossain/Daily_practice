@@ -5,7 +5,7 @@ img {
   display: block;
 }
 div{
-  background: red;
+  background: rgb(76, 0, 255);
   height: 200px;
   width: 200px;
   float: none;
@@ -47,4 +47,5 @@ h1::before {
   top: 0px;
   left: 50%;
   margin-left: -100px;
+  opacity: .5;
 }
