@@ -47,4 +47,21 @@ p{
   width: 400px;
   height: 400px;
   overflow: auto;
+  float: right;
+}
+p.two{
+  width: 400px;
+    height: 400px;
+    overflow: scroll;
+    overflow-x: hidden;
+    float: left;    
+}
+p.three{
+  width: auto;
+    height: auto;
+}
+img{
+  height: 300px;
+  width: 300px;
+  float: left;
 }

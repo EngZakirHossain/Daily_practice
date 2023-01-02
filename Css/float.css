@@ -1,0 +1,50 @@
+img {  
+  float: none;
+  padding: 20px;
+  margin: 0 auto;
+  display: block;
+}
+div{
+  background: red;
+  height: 200px;
+  width: 200px;
+  float: none;
+  margin: 10px auto;
+}
+p.three::first-line {
+  color: blue;
+  
+}
+p.three::first-letter{
+font-size: 48px;
+}
+h1{
+  font-size: 48px;
+  text-align:center;
+  text-transform: uppercase;
+  color: blue;
+  position: relative;
+  padding-bottom: 5px;
+  padding-top: 5px;
+}
+
+h1::after{
+  background: blue;
+  height: 5px;
+  width: 200px;
+  position: absolute;
+  content: '';
+  bottom: 0px;
+  left: 50%;
+  margin-left: -100px;
+}
+h1::before {
+  background: blue;
+  height: 5px;
+  width: 200px;
+  position: absolute;
+  content: '';
+  top: 0px;
+  left: 50%;
+  margin-left: -100px;
+}
