@@ -1,3 +1,13 @@
+*,
+*::after,
+::before{
+  box-sizing: border-box;
+}
+
+html{
+  box-sizing: inherit;
+}
+
 h1 {
   font-size: 48px;
   text-align: center;
@@ -76,4 +86,52 @@ ul ul a{
 
 ul ul li {
   margin-bottom: 30px;
+}
+
+div.flag{
+  background: green;
+  height: 250px;
+  width: 500px;
+  position: relative;
+}
+
+div.flag::after{
+  content: '';
+  height: 100px;
+  width: 100px;
+  background: red;
+  top: 50%;
+  left: 50%;
+  position: absolute;
+  transform: translate(-50%,-50%);
+  border-radius: 50px;
+
+}
+
+.container{
+  display: flex;
+  align-items: stretch;
+  justify-content: space-around;
+}
+.container div{
+  padding: 20px;
+  flex-basis: 30%;
+}
+.container .child1 {
+  background: blanchedalmond;
+}
+.container .child2 {
+  background: rgb(208, 205, 255);
+}
+.container .child3 {
+  background: rgb(175, 120, 37);
+}
+
+@media only screen and (min-width:200px) and (max-width:767px){
+.container {
+    display: flex;
+    align-items: stretch;
+    justify-content: space-around;
+    flex-direction: column;
+  }
 }
