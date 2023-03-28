@@ -16,10 +16,12 @@
   <div class="row">
     <div class="col-6 container">
       <h1 id="title">Task Manager!</h1>
-      <input type="text" name="task_name" id="task_name" class="form-control">
+      <form>
+        <input type="text" name="task_name" id="task_name" class="form-control">
       <button type="submit" class="btn btn-primary mt-2" id="add_task"> Add task</button>
+      </form>
       <div id="task_list">
-        <h3>Tasks</h3>
+        <h3 id="task_title">Tasks</h3>
       <ul class="list-group mb-0">
         <li class="list-group-item d-flex justify-content-between align-items-center">
           List Item
@@ -51,7 +53,8 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"
     integrity="sha512-fD9DI5bZwQxOi7MhYWnnNPlvXdp/2Pj3XSTRrFs5FQa4mizyGLnJcN6tuvUS6LbmgN1ut+XGSABKvjN0H6Aoow=="
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-  <script src="main.js"></script>
+  <!-- <script src="main.js"></script> -->
+  <script src="eventLisner.js"></script>
 </body>
 
 </html>
