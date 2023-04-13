@@ -1,31 +1,57 @@
 //get the button
-const btn = document.getElementById('button');
-btn.addEventListener('click', loadData);
+const btn_txt = document.getElementById('button-txt');
+const btn_json = document.getElementById('button-json');
+const btn_api = document.getElementById('button-api');
+const post = document.getElementById('post');
 
-function loadData() {
-  //create object
-  const xhr = new XMLHttpRequest();
-  //panel setup / Open post
-  xhr.open('GET', 'https://jsonplaceholder.typicode.com/posts', true);
-  // run when data loaded
-  xhr.onload = function () {
-    if (this.status === 200) {
-      const posts = JSON.parse(this.responseText);
+btn_txt.addEventListener('click', () => {
+  fetch('data.txt')
+    .then((res) => {
+      return res.text();
+    }).then((data) => {
+      console.log(data);
+      post.innerHTML = data;
+    }).catch((err) => {
+      console.log(err);
+    })
+});
+btn_json.addEventListener('click', () => {
+  
+  fetch('posts.json')
+    .then((res) => {
+      return res.json();
+    }).then((data) => {
+      console.log(data);
       let output = '';
-      posts.forEach(post => {
-         output += `
-      <ul>
-        <li>  <h5> ID: ${post.id}</h5>      </li>
-        <li>  <h6> User: ${post.userId}</h6>      </li>
-        <li>  <h5> Title: ${post.title}</h5>      </li>
-        <li>  <p> Body: ${post.body}</p>      </li>
-      </ul>
-      `;
-      document.getElementById('post').innerHTML = output;
-        
-      });
-      
-    }
-  }
-  xhr.send();
-}
+      data.forEach(post => {        
+        output += `
+          <p>  ${post.title}</p>
+        `;
+      })
+      post.innerHTML = output;
+    }).catch((err) => {
+    console.log(err);
+  })
+})
+
+btn_api = addEventListener('click',()=> {
+  fetch('https://jsonplaceholder.typicode.com/todos')
+    .then((res) => {
+      return res.json();
+    }).then((data) => {
+      console.log(data);
+      let output = '';
+      data.forEach(todo => {        
+        todo += `
+          <p>  ${todo.title}</p>
+        `;
+      })
+      post.innerHTML = output;
+    }).catch((err) => {
+      console.log(err)
+  })
+
+})
+
+
+
